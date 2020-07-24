@@ -64,7 +64,7 @@ app.get('/category/:cat', function (req, res) {
   });
 });
 
-var server = app.listen(8086, function () {
+var server = app.listen(process.env.PORT || 8086, function () {
   var host = server.address().address;
   var port = server.address().port;
    
