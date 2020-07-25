@@ -4,7 +4,7 @@ var sqlite3 = require('sqlite3').verbose();
 
 app.set('view engine', 'ejs');
 
-let db = new sqlite3.Database('./test2.db', (err) => {
+let db = new sqlite3.Database('./bnc.db', (err) => {
   if (err) {
     console.error(err.message);
   }
@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
     if (err) {
       throw err;
     }
-    res.render("index", {
+    res.render('index', {
       data: rows
     });
   });
@@ -30,12 +30,14 @@ app.get('/all', function (req, res) {
       throw err1;
     }
     bots = result1;
+	console.log('Bots obtained.');
     db.all('SELECT * FROM ANNOUNCEMENT', [], (err2, result2) => {
       if (err2) {
         throw err2;
       }
       chan = result2;
-      res.render("all", {
+	  console.log('Channels obtained.');
+      res.render('all', {
         bots: bots,
         channels: chan
       });
@@ -50,7 +52,7 @@ app.get('/submit', function (req, res) {
 app.get('/category/:cat*', function (req, res) {
   let cat = req.params.cat;
   if (req.params.cat == 'Halls') {
-	cat = 'Halls/Residential Colleges';
+    cat = 'Halls/Residential Colleges';
   }
   let bots = [];
   let chan = [];
@@ -58,23 +60,23 @@ app.get('/category/:cat*', function (req, res) {
     if (err) {
       throw err;
     }
-	console.log('Bots obtained.');
-    bots = result1;
-	db.all(`SELECT * FROM ANNOUNCEMENT WHERE CATEGORY='${cat}'`, [], (err2, result2) => {
+	bots = result1;
+    console.log('Bots obtained.');
+    db.all(`SELECT * FROM ANNOUNCEMENT WHERE CATEGORY='${cat}'`, [], (err2, result2) => {
       if (err2) {
         throw err2;
       }
-	  console.log('Channels obtained.');
-      chan = result2;
-	  if (bots.length + chan.length < 1) {
-		res.render('404');
+	  chan = result2;
+      console.log('Channels obtained.');
+      if (bots.length + chan.length < 1) {
+        res.render('404');
       } else {
-		res.render('all', {
+        res.render('all', {
           bots: bots,
-		  channels: chan
+          channels: chan
         });
       }
-	});
+    });
   });
 });
 
@@ -86,5 +88,5 @@ var server = app.listen(process.env.PORT || 8086, function () {
   var host = server.address().address;
   var port = server.address().port;
    
-  console.log("Server listening at http://%s:%s", host, port);
+  console.log('Server listening at http://%s:%s', host, port);
 })
