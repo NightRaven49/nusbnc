@@ -47,21 +47,39 @@ app.get('/submit', function (req, res) {
   res.render('submit');
 });
 
-app.get('/category/:cat', function (req, res) {
+app.get('/category/:cat*', function (req, res) {
+  let cat = req.params.cat;
+  if (req.params.cat == 'Halls') {
+	cat = 'Halls/Residential Colleges';
+  }
   let bots = [];
-  db.all(`SELECT *FROM BOTS WHERE CATEGORY='${req.params.cat}'`, [], (err, result) => {
+  let chan = [];
+  db.all(`SELECT * FROM BOTS WHERE CATEGORY='${cat}'`, [], (err, result1) => {
     if (err) {
       throw err;
     }
-    bots = result;
-    if (bots.length < 1) {
-      res.render("404");
-    } else {
-      res.render('category', {
-        bots: bots
-      });
-    }
+	console.log('Bots obtained.');
+    bots = result1;
+	db.all(`SELECT * FROM ANNOUNCEMENT WHERE CATEGORY='${cat}'`, [], (err2, result2) => {
+      if (err2) {
+        throw err2;
+      }
+	  console.log('Channels obtained.');
+      chan = result2;
+	  if (bots.length + chan.length < 1) {
+		res.render('404');
+      } else {
+		res.render('all', {
+          bots: bots,
+		  channels: chan
+        });
+      }
+	});
   });
+});
+
+app.get('*', function (req, res) {
+  res.render('404');
 });
 
 var server = app.listen(process.env.PORT || 8086, function () {
