@@ -1,38 +1,12 @@
-<!-- index.ejs -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <%- include('parts/head') %>
-</head>
-<body class="container">
-
-<header>
-  <%- include('parts/header') %>
-</header>
-
-<main>
-<div class="row">
-  <div class="col-xs-3">
-    <%- include('parts/quicklinks') %>
-  </div>
-  
-  <div class="col-xs-9">
-    <div class="well" style="padding-left:40px">
-	  <h3>Welcome to NUS Bots & Channels!</h3>
+<%- include('parts/header') %>
+	  <h1>Welcome to NUS Bots & Channels!</h1>
 	  <p>On this website you can find many useful bots and announcement channels that you may find 
 	  useful during your studies in NUS. Below are the various categories that you may select to 
 	  find the bot or channel of interest, or you can display all bots and channels available with 
 	  the link in the top navbar.</p>
-      <ul>
+      <ul class="categories">
         <% data.forEach(function(category) { %>
           <li><a href="category/<%= category.CAT %>"><%= category.CAT %></a></li>
         <% }); %>
       </ul>
-    </div>
-  </div>
-</div>
-</main>
-
-</body>
-</html>
+<%- include('parts/footer') %>
