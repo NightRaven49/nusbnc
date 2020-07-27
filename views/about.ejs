@@ -1,22 +1,4 @@
-<!-- about.ejs -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <%- include('parts/head') %>
-</head>
-<body class="container">
-
-<header>
-  <%- include('parts/header') %>
-</header>
-
-<main>
-<div class="row">
-  <div class="col-xs-3">
-    <%- include('parts/quicklinks') %>
-  </div>
-  
+<%- include('parts/header') %>
   <div class="col-xs-9">
     <div class="well">
 	<h3>About</h3>
@@ -33,9 +15,5 @@
 	  <li>Website: <a href="https://github.com/NightRaven49/nusbnc" target="blank">github.com/NightRaven49/nusbnc</a></li>
 	</ul>
 	</div>
-  </div>
-  </div>
-</main>
-  
-</body>
-</html>
+</div>
+<%- include('parts/footer')%>

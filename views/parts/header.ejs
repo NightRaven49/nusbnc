@@ -1,21 +1,40 @@
-<!-- parts/header.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' href='../css/styles.css' />
+    <title>NUS Bots and Channels</title>
+</head>
 
-<nav class="navbar navbar-default" role="navigation">
-<div class="container-fluid">
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-left">
+        <a class="navbar-brand" href="/">NUS Telegram Site</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/submit">Submit</a>
+                </li>
+            </ul>
+        </div>
 
-    <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-            <span class="glyphicon glyphicon glyphicon-education"></span>
-            NUSB&C
-        </a>
+        <div class="quicklink-container">
+            <hr>
+            <p><img src="https://nusmods.com/favicon-16x16.png"/><a class="quicklink" data-selected="true" data-label-id="0" href="https://nusmods.com/"> NUSMods</a></p>
+            <p><a class="quicklink" data-selected="true" data-label-id="0" href="https://nuswhispers.com/"><img src="https://www.nuswhispers.com/favicon-16x16.png"/> NUSWhispers</a></p>
+            <p><a class="quicklink" data-selected="true" data-label-id="0" href="https://t.me/nusbncbot/"><img src="https://telegram.org/img/t_logo.png" height="16" width="16"/> Telegram bot</a></p>
+          </div>
+    </nav>
 
-        <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/all">All entries</a></li>
-			<li><a href="/submit">Submit new bot/channel</a></li>
-			<li><a href="/about">About</a></li>
-        </ul>
-    </div>
-
-</div>
-</nav>
+    <div class="container">
+        <div class="jumbotron">

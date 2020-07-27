@@ -3,6 +3,7 @@ var app = express();
 var sqlite3 = require('sqlite3').verbose();
 
 app.set('view engine', 'ejs');
+app.use(express.static("public"));
 
 let db = new sqlite3.Database('./bnc.db', (err) => {
   if (err) {
