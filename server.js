@@ -32,15 +32,15 @@ app.get('/all', function (req, res) {
       throw err1;
     }
     bots = result1;
-	console.log('Bots obtained.');
+    console.log('Bots obtained.');
     db.all('SELECT * FROM ANNOUNCEMENT', [], (err2, result2) => {
       if (err2) {
         throw err2;
       }
       chan = result2;
-	  console.log('Channels obtained.');
+      console.log('Channels obtained.');
       res.render('all', {
-		toptxt: text,
+        toptxt: text,
         bots: bots,
         channels: chan
       });
@@ -55,24 +55,24 @@ app.get('/category/:cat*', function (req, res) {
   }
   let bots = [];
   let chan = [];
-  const text = 'Listed below are the bots and channels available in ${cat}.';
+  const text = `Listed below are the bots and channels available in ${cat}.`;
   db.all(`SELECT * FROM BOTS WHERE CATEGORY='${cat}'`, [], (err, result1) => {
     if (err) {
       throw err;
     }
-	bots = result1;
+  bots = result1;
     console.log('Bots obtained.');
     db.all(`SELECT * FROM ANNOUNCEMENT WHERE CATEGORY='${cat}'`, [], (err2, result2) => {
       if (err2) {
         throw err2;
       }
-	  chan = result2;
+      chan = result2;
       console.log('Channels obtained.');
       if (bots.length + chan.length < 1) {
         res.render('404');
       } else {
         res.render('all', {
-		  toptxt: text,
+          toptxt: text,
           bots: bots,
           channels: chan
         });

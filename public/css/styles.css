@@ -46,11 +46,11 @@ a:hover {
 
 .quicklink {
     color: white;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 .quicklink:hover {
-    opacity: 0.8; 
+    opacity: 0.9; 
     color: white;
 }
 
@@ -123,7 +123,7 @@ a:hover {
 /* Card */
 
 .card {
-	width: 1110px;
+	width: 500px;
 	height: 100px;
 	line-height: 10px;
 }
