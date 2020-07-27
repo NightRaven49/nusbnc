@@ -1,0 +1,129 @@
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body {
+	padding-top: 90px;
+}
+a:hover {
+	text-decoration: none;
+}
+
+@media (min-width:768px) {
+	body {
+        padding-top: 0;
+        margin-left: 232px
+    }
+
+}
+
+@media (max-width:768px) {
+    .quicklink-container {
+        display: none;
+	}
+}
+
+/* Home Page Main */
+
+.categories li {
+	margin: 5px 0;
+}
+
+.jumbotron {
+	padding-bottom: 30px;
+	margin-bottom: 20px;
+}
+
+/* Navigation Bar */
+
+.bg-primary {
+    background-color: #EF7C00 !important;
+}
+
+.quicklink {
+    color: white;
+    opacity: 0.5;
+}
+
+.quicklink:hover {
+    opacity: 0.8; 
+    color: white;
+}
+
+.navbar.fixed-left {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1030
+}
+
+@media (min-width:768px) {
+	.navbar.fixed-left {
+		bottom: 0;
+		width: 232px;
+		flex-flow: column nowrap;
+		align-items: flex-start
+	}
+	.navbar.fixed-left .navbar-collapse {
+		flex-grow: 0;
+		flex-direction: column;
+		width: 100%
+	}
+	.navbar.fixed-left .navbar-collapse .navbar-nav {
+		flex-direction: column;
+		width: 100%
+	}
+	.navbar.fixed-left .navbar-collapse .navbar-nav .nav-item {
+		width: 100%
+	}
+	.navbar.fixed-left .navbar-collapse .navbar-nav .nav-item .dropdown-menu {
+		top: 0
+	}
+}
+
+@media (min-width:768px) {
+	.navbar.fixed-left {
+		right: auto
+	}
+	.navbar.fixed-left .navbar-nav .nav-item .dropdown-toggle:after {
+		border-top: .3em solid transparent;
+		border-left: .3em solid;
+		border-bottom: .3em solid transparent;
+		border-right: none;
+		vertical-align: baseline
+	}
+	.navbar.fixed-left .navbar-nav .nav-item .dropdown-menu {
+		left: 100%
+	}
+}
+
+/* Submit Form */
+
+.btn {
+    background-color: #003D7C;
+    border-color: #003D7C;
+}
+
+.btn:hover {
+    background-color: #00274f;
+}
+
+/* List */
+
+.list-group-item {
+	border: 0;
+	background-color: #e9ecef;
+}
+
+/* Card */
+
+.card {
+	width: 1110px;
+	height: 100px;
+	line-height: 10px;
+}
