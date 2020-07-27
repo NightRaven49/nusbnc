@@ -118,6 +118,7 @@ a:hover {
 .list-group-item {
 	border: 0;
 	background-color: #e9ecef;
+	line-height: 1;
 }
 
 /* Card */
