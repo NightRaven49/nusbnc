@@ -18,14 +18,15 @@
   </div>
   
   <div class="col-xs-9">
-    <div class="jumbotron">
-      <h2>Bots</h2>
+    <div class="well" style="padding:50px">
+	  <p><%- toptxt %> Bots are listed first, then announcement channels.</p>
+      <h3>Bots</h3>
       <ul>
         <% bots.forEach(function(bot) { %>
           <li><a target="blank" href="https://t.me/<%- bot.USERNAME.substring(1) %>"><%= bot.NAME %></a></li>
         <% }); %>
       </ul>
-      <h2>Announcement Channels</h2>
+      <h3>Announcement Channels</h3>
       <ul>
         <% channels.forEach(function(chan) { %>
           <li><a target="blank" href="https://<%- chan.LINK %>"><%= chan.NAME %></a></li>
