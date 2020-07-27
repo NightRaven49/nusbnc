@@ -1,40 +1,20 @@
-<!-- all.ejs -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <%- include('parts/head') %>
-</head>
-<body class="container">
-
-<header>
-  <%- include('parts/header') %>
-</header>
-
-<main>
-<div class="row">
-  <div class="col-xs-3">
-    <%- include('parts/quicklinks') %>
-  </div>
-  
+<%- include('parts/header') %>
   <div class="col-xs-9">
-    <div class="well" style="padding:50px">
-	  <p><%- toptxt %> Bots are listed first, then announcement channels.</p>
+    <div class="well" style="padding: 0 50px">
+	  <p><%= toptxt %> Bots are listed first, then announcement channels.</p>
       <h3>Bots</h3>
-      <ul>
+      <ul class="list-group list-group-flush">
         <% bots.forEach(function(bot) { %>
-          <li><a target="blank" href="https://t.me/<%- bot.USERNAME.substring(1) %>"><%= bot.NAME %></a></li>
+          <li class="list-group-item"><a target="blank" href="https://t.me/<%- bot.USERNAME.substring(1) %>"><%= bot.NAME %></a></li>
         <% }); %>
       </ul>
       <h3>Announcement Channels</h3>
-      <ul>
+      <ul class="list-group list-group-flush">
         <% channels.forEach(function(chan) { %>
-          <li><a target="blank" href="https://<%- chan.LINK %>"><%= chan.NAME %></a></li>
+          <li class="list-group-item"><a target="blank" href="https://<%- chan.LINK %>"><%= chan.NAME %></a></li>
         <% }); %>
       </ul>
     </div>
     </div>
-</main>
 
-</body>
-</html>
+<%- include('parts/footer') %>
