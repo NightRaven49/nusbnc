@@ -1,0 +1,41 @@
+<!-- about.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('parts/head') %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('parts/header') %>
+</header>
+
+<main>
+<div class="row">
+  <div class="col-xs-3">
+    <%- include('parts/quicklinks') %>
+  </div>
+  
+  <div class="col-xs-9">
+    <div class="well">
+	<h3>About</h3>
+	<p>NUS Bots & Channels is a project created by Eu Jin and Warren for Orbital 2020. It aims to 
+	create platforms for users to search and share bots and announcement channels pertaining to 
+	NUS life.</p>
+	<p>This website is one such platform, the other being the Telegram bot linked in the sidebar. 
+	Both feature similar functionality. This website relies on Node.js with Express and Embedded 
+	JS modules, while the bot has been coded out in Python with the python-telegram-bot module. 
+	Both share a common SQLite3 database holding all available bots and channels.</p>
+	<p>The source codes are available here:</p>
+	<ul>
+	  <li>Telegram bot: <a href="https://github.com/NightRaven49/nusbncbot" target="blank">github.com/NightRaven49/nusbncbot</a></li>
+	  <li>Website: <a href="https://github.com/NightRaven49/nusbnc" target="blank">github.com/NightRaven49/nusbnc</a></li>
+	</ul>
+	</div>
+  </div>
+  </div>
+</main>
+  
+</body>
+</html>
