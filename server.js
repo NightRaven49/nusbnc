@@ -26,7 +26,7 @@ app.get('/', function (req, res) {
 app.get('/all', function (req, res) {
   let bots = [];
   let chan = [];
-  const text = 'Displayed below are all the bots available on both the website and bot.';
+  const text = 'Displayed below are all the bots and channels available on both the website and bot.';
   db.all('SELECT * FROM BOTS', [], (err1, result1) => {
     if (err1) {
       throw err1;

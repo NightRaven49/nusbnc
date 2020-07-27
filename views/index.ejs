@@ -4,10 +4,10 @@
 	  <p>On this website you can find many useful bots and announcement channels that you may find 
 	  useful during your studies in NUS. Below are the various categories that you may select to 
 	  find the bot or channel of interest, or you can display all bots and channels available with 
-	  the link in the top navbar.</p>
+	  the link in the navbar.</p>
       <ul class="categories">
         <% data.forEach(function(category) { %>
-          <li><a href="category/<%= category.CAT %>"><%= category.CAT %></a></li>
+          <li class="list-group-item"><a href="category/<%= category.CAT %>"><%= category.CAT %></a></li>
         <% }); %>
       </ul>
 <%- include('parts/footer') %>
