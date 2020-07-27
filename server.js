@@ -25,6 +25,7 @@ app.get('/', function (req, res) {
 app.get('/all', function (req, res) {
   let bots = [];
   let chan = [];
+  const text = 'Displayed below are all the bots available on both the website and bot.';
   db.all('SELECT * FROM BOTS', [], (err1, result1) => {
     if (err1) {
       throw err1;
@@ -38,16 +39,13 @@ app.get('/all', function (req, res) {
       chan = result2;
 	  console.log('Channels obtained.');
       res.render('all', {
+		toptxt: text,
         bots: bots,
         channels: chan
       });
     });
   });
 })
-
-app.get('/submit', function (req, res) {
-  res.render('submit');
-});
 
 app.get('/category/:cat*', function (req, res) {
   let cat = req.params.cat;
@@ -56,6 +54,7 @@ app.get('/category/:cat*', function (req, res) {
   }
   let bots = [];
   let chan = [];
+  const text = 'Listed below are the bots and channels available in ${cat}.';
   db.all(`SELECT * FROM BOTS WHERE CATEGORY='${cat}'`, [], (err, result1) => {
     if (err) {
       throw err;
@@ -72,12 +71,21 @@ app.get('/category/:cat*', function (req, res) {
         res.render('404');
       } else {
         res.render('all', {
+		  toptxt: text,
           bots: bots,
           channels: chan
         });
       }
     });
   });
+});
+
+app.get('/submit', function (req, res) {
+  res.render('submit');
+});
+
+app.get('/about', function (req, res) {
+  res.render('about');
 });
 
 app.get('*', function (req, res) {
